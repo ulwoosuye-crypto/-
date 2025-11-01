@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 로그인</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+            background-color: #f5f6f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #03c75a;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            background: white;
+            border: 1px solid #dadada;
+            padding: 40px 30px;
+            border-radius: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 13px;
+        }
+
+        .input-field {
+            width: 100%;
+            height: 48px;
+            padding: 0 15px;
+            border: 1px solid #dadada;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .input-field:focus {
+            border-color: #03c75a;
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 13px;
+            font-size: 13px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #4d4d4d;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .security-notice {
+            color: #03c75a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-btn {
+            width: 100%;
+            height: 48px;
+            background-color: #03c75a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .login-btn:hover {
+            background-color: #02b350;
+        }
+
+        .login-btn:active {
+            background-color: #019544;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #8e8e8e;
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #8e8e8e;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .separator {
+            color: #dadada;
+        }
+
+        .signup-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .signup-text {
+            font-size: 14px;
+            color: #8e8e8e;
+            margin-bottom: 15px;
+        }
+
+        .signup-btn {
+            width: 100%;
+            height: 48px;
+            background-color: white;
+            color: #03c75a;
+            border: 1px solid #03c75a;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .signup-btn:hover {
+            background-color: #f7f7f7;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #b1b1b1;
+        }
+
+        .footer a {
+            color: #b1b1b1;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <div class="logo-text">NAVER</div>
+        </div>
+
+        <div class="login-box">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="아이디" id="id">
+                </div>
+                <div class="input-group">
+                    <input type="password" class="input-field" placeholder="비밀번호" id="pw">
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>로그인 상태 유지</span>
+                    </label>
+                    <a href="#" class="security-notice">IP보안</a>
+                </div>
+
+                <button type="submit" class="login-btn">로그인</button>
+
+                <div class="links">
+                    <a href="#">비밀번호 찾기</a>
+                    <span class="separator">|</span>
+                    <a href="#">아이디 찾기</a>
+                    <span class="separator">|</span>
+                    <a href="#">회원가입</a>
+                </div>
+            </form>
+
+            <div class="signup-section">
+                <div class="signup-text">네이버가 처음이신가요?</div>
+                <button class="signup-btn">회원가입</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>
+                <a href="#">이용약관</a> | 
+                <a href="#"><strong>개인정보처리방침</strong></a> | 
+                <a href="#">책임의 한계와 법적고지</a> | 
+                <a href="#">회원정보 고객센터</a>
+            </p>
+            <p style="margin-top: 10px;">Copyright © NAVER Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('id').value;
+            const pw = document.getElementById('pw').value;
+            
+            if (!id) {
+                alert('아이디를 입력해주세요.');
+                return;
+            }
+            if (!pw) {
+                alert('비밀번호를 입력해주세요.');
+                return;
+            }
+            
+            alert('로그인 기능은 데모용입니다.');
+        });
+    </script>
+</body>
+</html>
